@@ -32,8 +32,8 @@ class Finance_Window:
         e2 = Entry(frameEntries).grid(row=1, column=1)
 
         frameButton = Frame(self.window)
-        button = Button(frameButton, text='Go!', width=25, command=self.destroy_root)
-        button.grid(row=1)
+        button = Button(frameButton, text='Close', width=25, command=self.destroy_root)
+        button.grid(row=4)
 
         frameEntries.grid(row=0)
         frameButton.grid(row=1)

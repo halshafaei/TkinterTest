@@ -10,8 +10,8 @@ class MainWindow:
         self.frame = Frame(self.window)
         self.varObj = Variable()
 
-        w = 900  # width for the Tk window
-        h = 700  # height for the Tk window
+        w = 300  # width for the Tk window
+        h = 200  # height for the Tk window
 
         # get screen width and height
         ws = self.window.winfo_screenwidth()  # width of the screen
@@ -39,8 +39,10 @@ class MainWindow:
         button = Button(frameButton, text='Go!', width=25, command=self.login_check)
         button.grid(row=1)
 
-        self.window.grid_rowconfigure(1, weight=1)
-        self.window.grid_rowconfigure(0, weight=1)
+        self.window.grid_rowconfigure(0, weight=2)
+        self.window.grid_rowconfigure(1, weight=2)
+        self.window.grid_columnconfigure(0, weight=3)
+        self.window.grid_columnconfigure(1, weight=3)
         frameEntries.grid(row=0)
         frameButton.grid(row=1)
 

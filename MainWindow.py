@@ -45,7 +45,7 @@ class MainWindow:
 
     def switch_window(self):
         self.newWindow = tk.Toplevel(self.window)
-        Finance_Window(self.newWindow, self.window)
+        FinanceWindow(self.newWindow, self.window)
         self.window.withdraw()
 
     # check passwords

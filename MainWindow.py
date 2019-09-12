@@ -26,13 +26,10 @@ class MainWindow:
         self.window.title("Login")
 
         frameEntries = Frame(self.window)
-        Label(frameEntries, text='Username').grid(row=0)
         Label(frameEntries, text='Password').grid(row=1)
-        e1 = Entry(frameEntries)
-        e1.grid(row=0, column=1)
         e2 = Entry(frameEntries, show="*")
         e2.grid(row=1, column=1)
-        self.Username = e1
+        self.Username = "root"
         self.Password = e2
 
         frameButton = Frame(self.window)
@@ -53,11 +50,10 @@ class MainWindow:
 
     # check passwords
     def login_check(self):
-        print(self.Username.get())
+        print(self.Username )
         print(self.Password.get())
-        if self.Username.get() == "root":
-            if self.Password.get() == "root":
-                self.switch_window()
+        if self.Password.get() == "root":
+            self.switch_window()
 
 
 def main():

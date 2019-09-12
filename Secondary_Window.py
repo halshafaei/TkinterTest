@@ -4,7 +4,7 @@ from tkinter import *
 
 
 class Finance_Window:
-    def __init__(self, master,  root):
+    def __init__(self, master, root):
         self.root = root
         self.window = master
         self.frame = Frame(self.window)
@@ -25,18 +25,33 @@ class Finance_Window:
         self.window.resizable(height=FALSE, width=FALSE)
         self.window.title("Finance")
 
+        framelist = Frame(self.window)
+        listbox = Listbox(framelist, selectmode=EXTENDED)
+        listbox.pack()
+        self.listbox = listbox
+        listbox.bind("<Double-Button-1>", self.double_click)
+        listbox.insert(END, "a list entry")
+        listbox.insert(END, "a second list entry")
+
+
         frameEntries = Frame(self.window)
-        Label(frameEntries, text='Username').grid(row=0)
-        Label(frameEntries, text='Password').grid(row=1)
-        e1 = Entry(frameEntries).grid(row=0, column=1)
-        e2 = Entry(frameEntries).grid(row=1, column=1)
+        Label(frameEntries, text='Option 1').grid(row=0, column=0)
+        Label(frameEntries, text='Option 2').grid(row=0, column=1)
 
         frameButton = Frame(self.window)
         button = Button(frameButton, text='Close', width=25, command=self.destroy_root)
-        button.grid(row=4)
+        button.pack()
+
 
         frameEntries.grid(row=0)
-        frameButton.grid(row=1)
+        framelist .grid(row=1,column = 0)
+        frameButton.grid(row=1, column = 1)
 
+    def double_click(self,x):
+        print(x)
+        items = map(int, self.listbox.curselection())
+        for item in items:
+            # do something
+            print(item)
     def destroy_root(self):
         self.root.destroy()

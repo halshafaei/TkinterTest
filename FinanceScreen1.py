@@ -1,10 +1,9 @@
 import tkinter as tk
 
 from tkinter import *
-from FinanceScreen1 import *
 
 
-class FinanceWindow:
+class FinanceWindow1:
     def __init__(self, master, root):
         self.root = root
 
@@ -42,18 +41,12 @@ class FinanceWindow:
         Label(frameentries, text='Option 2').grid(row=0, column=1)
 
         framebuttons = Frame(self.window)
-        GotoFinanceScreen1 = Button(framebuttons, text='GotoFinanceScreen1', width=25, command=self.go_to_window_1)
-        GotoFinanceScreen2 = Button(framebuttons, text='GotoFinanceScreen1', width=25, command=self.destroy_root)
-        GotoFinanceScreen3 = Button(framebuttons, text='GotoFinanceScreen1', width=25, command=self.destroy_root)
-        GotoFinanceScreen4 = Button(framebuttons, text='GotoFinanceScreen1', width=25, command=self.destroy_root)
-        GotoFinanceScreen1.grid(row=0, column=0, padx=15, pady=30)
-        GotoFinanceScreen2.grid(row=0, column=1, padx=15, pady=30)
-        GotoFinanceScreen3.grid(row=0, column=2, padx=15, pady=30)
-        GotoFinanceScreen4.grid(row=0, column=3, padx=15, pady=30)
+        buttonfinancescreen1 = Button(framebuttons, text='GotoFinanceScreen1', width=25, command=self.destroy_root)
+        buttonfinancescreen1.pack()
 
-        #frameentries.grid(row=0)
-        #framelist .grid(row=1, column= 0)
-        framebuttons.grid(row=1)
+        frameentries.grid(row=0)
+        framelist.grid(row=1, column=0)
+        framebuttons.grid(row=1, column=1)
 
     def double_click(self,x):
         items = map(int, self.listbox.curselection())
@@ -66,8 +59,3 @@ class FinanceWindow:
 
     def on_closing(self):
         self.root.destroy()
-
-    def go_to_window_1(self):
-        self.newWindow = tk.Toplevel(self.window)
-        FinanceWindow1(self.newWindow, self.root)
-        self.window.withdraw()

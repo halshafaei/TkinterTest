@@ -27,14 +27,14 @@ class LoginWindow:
 
         frameEntries = Frame(self.window)
         Label(frameEntries, text='Password').grid(row=1)
-        e2 = Entry(frameEntries, show="*")
-        e2.grid(row=1, column=1)
+        e1 = Entry(frameEntries, show="*")
+        e1.grid(row=1, column=1)
         self.Username = "root"
-        self.Password = e2
+        self.Password = e1
 
         frameButton = Frame(self.window)
         button = Button(frameButton, text='Go!', width=25, command=self.login_check)
-        button.grid(row=1)
+        button.pack()
 
         self.window.grid_rowconfigure(0, weight=2)
         self.window.grid_rowconfigure(1, weight=2)
